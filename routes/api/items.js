@@ -25,7 +25,7 @@ router.post('/', (req,res) => {
     newItem.save().then(item =>res.json(item));
 }); 
 
-//module.exports = router; 
+module.exports = router; 
 
 //@route DELETE api/items/:id
 //@desc Delete a Item
