@@ -6,11 +6,6 @@ const intitalState = {};
 
 //const middleware = [thunk];
 
-
-
-//const store = createStore(reducer, intitalState, compose(applyMiddleware(thunk)));
-
-
 const store = createStore(rootReducer, intitalState, compose(
     applyMiddleware(thunk)
 ));
