@@ -1,4 +1,5 @@
 const express = require('express');
+// creates a routing object that handles routing od responses from application endpoints (URIs)
 const router = express.Router();
 
 //Item Model 
@@ -24,7 +25,7 @@ router.post('/', (req,res) => {
     newItem.save().then(item =>res.json(item));
 }); 
 
-module.exports = router;
+//module.exports = router; 
 
 //@route DELETE api/items/:id
 //@desc Delete a Item

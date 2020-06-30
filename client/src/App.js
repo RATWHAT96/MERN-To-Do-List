@@ -19,8 +19,6 @@ function App() {
         <AppNavBar />
         <Container>
           <ItemModal />
-        </Container>
-        <Container>
           <ShoppingList />
         </Container>
       </div>

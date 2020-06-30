@@ -1,12 +1,12 @@
+//headers importing express and mongoose modules, need to npm install
 const express = require('express');
 const mongoose = require('mongoose');
+//header to require node path module
 const path = require('path');
-
-
-
 
 const items = require('./routes/api/items');
 
+// creates express application using the imported module
 const app = express();
 
 //middle ware
@@ -26,15 +26,19 @@ app.use('/api/items', items);
 
 //Serve statoc assets if we are in production
 if(process.env.NODE_ENV == 'production') {
-    //Set static folder
+    //Sets root directory from which to serve static assets
     app.use(express.static('client/build'));
 
+    //Resolves the specified paths into an absolute path
     app.get('*', (req, res) => {
+        // __dirname tells you the absolute path of the directory containing the currently executing file
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
     
 }
 
+// To tell your web server what port to listen on, so port is in the environment variable PORT, or 5000 if there's nothing there.
 const port = process.env.PORT || 5000;
 
+//app.listen() creates the Node.js web server at the specified host and port.
 app.listen(port, () => console.log(`Server strated on port ${port}`));
