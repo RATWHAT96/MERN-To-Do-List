@@ -24,14 +24,14 @@ mongoose
 //Use Routes
 app.use('/api/items', items);
 
-//Serve statoc assets if we are in production
+//Serve static assets if we are in production
+//.static = Sets root directory from which to serve static assets
+//.resolve = Resolves the specified paths into an absolute path
+//__dirname tells you the absolute path of the directory containing the currently executing file
 if(process.env.NODE_ENV == 'production') {
-    //Sets root directory from which to serve static assets
     app.use(express.static('client/build'));
 
-    //Resolves the specified paths into an absolute path
     app.get('*', (req, res) => {
-        // __dirname tells you the absolute path of the directory containing the currently executing file
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
     
