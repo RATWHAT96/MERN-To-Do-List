@@ -30,7 +30,16 @@ class AppNavbar extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/">RATWHAT</NavLink>
+                                <NavLink href="https://stackoverflow.com/users/11450660/rahul-ratwatte">StackOverflow</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="https://coronavirus.data.gov.uk/">Covid</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="https://www.bbc.co.uk/weather/2656173">Weather</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="https://github.com/RATWHAT96">RATWHAT96</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
