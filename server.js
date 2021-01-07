@@ -3,8 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 //header to require node path module
 const path = require('path');
-
-const items = require('./routes/api/items');
+const config = require('config');
 
 // creates express application using the imported module
 const app = express();
@@ -13,16 +12,17 @@ const app = express();
 app.use(express.json());
 
 //DB Config
-const db = require('./config/keys').mongoURI;
+const db = config.get('mongoURI');
 
 // Connect to Mongo
 mongoose
-    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(db, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
 //Use Routes
-app.use('/api/items', items);
+app.use('/api/items', require('./routes/api/items'));
+app.use('/api/users', require('./routes/api/users'));
 
 //Serve static assets if we are in production
 //.static = Sets root directory from which to serve static assets
@@ -41,4 +41,4 @@ if(process.env.NODE_ENV == 'production') {
 const port = process.env.PORT || 5000;
 
 //app.listen() creates the Node.js web server at the specified host and port.
-app.listen(port, () => console.log(`Server strated on port ${port}`));
+app.listen(port, () => console.log(`Server started on port ${port}`));

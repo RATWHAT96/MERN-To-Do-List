@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://ratwhat123:zVQTH7t7cWb0VSjK@cluster0.k1joh.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtSecret": "rrd_myJwtSecret"
+} 
