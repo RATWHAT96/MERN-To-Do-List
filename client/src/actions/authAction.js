@@ -23,7 +23,6 @@ export const loadUser = () => (dispatch, getState) => {
         payload: res.data
       }))
     .catch(err => {
-      console.log("its me");
       dispatch(returnErrors(err.response.data, err.response.status));
       dispatch({
         type: AUTH_ERROR
@@ -105,6 +104,7 @@ export const logout = () => {
 export const tokenConfig = getState => {
   // Get token from localstorage
   const token = getState().auth.token;
+  console.log(token);
 
   // Headers
   const config = {

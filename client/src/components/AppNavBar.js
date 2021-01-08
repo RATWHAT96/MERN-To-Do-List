@@ -45,7 +45,7 @@ class AppNavbar extends Component {
                 <Logout />
               </NavItem>
             </Fragment>)
-
+         
         const guestLinks = (
             <Fragment>
               <NavItem>
@@ -53,8 +53,8 @@ class AppNavbar extends Component {
               </NavItem>
             </Fragment>
           );
-        /** 
-        const guestLinks = (
+       
+/**         const guestLinks = (
             <Fragment>
             
               <NavItem>

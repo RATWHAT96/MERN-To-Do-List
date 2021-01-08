@@ -7,13 +7,11 @@ function auth (req, res, next){
 
     //check for token
     if(!token) {
-        console.log("its me too");
         return res.status(401).json({ msg:'No token, authorization denied'});
     }
 
     try{
         //Verify token
-        console.log("its working");
         const decoded = jwt.verify(token, config.get('jwtSecret'));
         //Add user
         req.user = decoded;

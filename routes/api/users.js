@@ -35,13 +35,13 @@ router.post('/', (req, res) => {
                         .then(user => {
 
                             jwt.sign(
-                                {id :user.id},
+                                {id : user.id},
                                 config.get('jwtSecret'),
-                                //3600 seconds
                                 {expiresIn: 3600},
                                 (err, token) => {
                                     if(err) throw err;
                                     res.json({
+                                        token,
                                         user: {
                                             id: user.id,
                                             name: user.name,
