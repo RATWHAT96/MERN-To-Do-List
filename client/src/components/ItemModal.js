@@ -47,11 +47,11 @@ class ItemModal extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{'width': '60vw'}}>
             {this.props.isAuthenticated ? 
             <Button
-              color="dark"
-              style={{ marginBottom: '2rem' }}
+              color="info"
+              style={{ marginTop: '2rem' }}
               onClick={this.toggle}
             >
               Add Task
@@ -71,7 +71,7 @@ class ItemModal extends Component {
                                     placeholder="Add To Do"
                                     onChange={this.onChange}
                                 />
-                                <Button color="dark" style={{marginTop: '2em', backgroundColor: '#004080'}} block> 
+                                <Button color="info" style={{marginTop: '2em', backgroundColor: '#17A2B8'}} block> 
                                     Add Task 
                                 </Button>
                             </FormGroup>

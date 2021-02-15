@@ -21,10 +21,10 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <AppNavBar />
-          <Container>
-            <ItemModal />
+          <div className="outerListContainer">
             <ShoppingList />
-          </Container>
+            <ItemModal />
+          </div>
         </div>
       </Provider>    
     );

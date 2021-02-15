@@ -90,7 +90,7 @@ class LoginModal extends Component {
             <Modal isOpen={this.state.modal} toggle={this.toggle}>
                 <ModalHeader toggle={this.toggle}>Edit Mode</ModalHeader>
                 <ModalBody>
-                {this.state.msg ? <Alert color="danger">{this.state.msg}</Alert> : null}
+                {this.state.msg ? <Alert color="info">{this.state.msg}</Alert> : null}
                 <Form onSubmit={this.onSubmit}>
                     <FormGroup>
                    
@@ -113,7 +113,7 @@ class LoginModal extends Component {
                         className="mb-3"
                         onChange={this.onChange}
                     />
-                    <Button color="dark" style={{ marginTop: '2rem' }} block>
+                    <Button color="info" style={{ marginTop: '2rem' }} block>
                         Login
                     </Button>
                     </FormGroup>
